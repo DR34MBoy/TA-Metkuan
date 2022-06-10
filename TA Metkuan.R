@@ -27,7 +27,7 @@ WHR_Fix <- data.frame(WHR_v2, row.names = 1)
 ###############################################################################
 
 
-# LKP 8 #
+# PCA #
 WHR.pca <- prcomp(WHR_Fix, center=TRUE, scale. = TRUE)
 summary(WHR.pca)
 
@@ -38,7 +38,7 @@ View(pcnya)
 ###############################################################################
 
 
-# LKP 9 #
+# Biplot #
 WHR.biplot <- biplot(WHR.pca, scale = 0)
 
 
@@ -52,7 +52,7 @@ fviz_nbclust(WHR_v2[,2:8], hcut, method = "silhouette") # Cluster Optimal = 2
 ###############################################################################
 
 
-# LKP 10 #
+# K-Means #
 # K-Means
 (kmeans.hasil.pca <- kmeans(WHR.pca$x,2))
 
@@ -63,7 +63,7 @@ points(kmeans.hasil.pca$centers[,c("PC1", "PC2")], col = 1:3, pch = 8, cex = 2)
 ###############################################################################
 
 
-# LKP 11 #
+# MDS #
 # Compute MDS
 # Metode 1
 mds <- WHR_Fix %>%
@@ -117,7 +117,7 @@ ggscatter(mds, x = "Dim.1", y = "Dim.2",
 ###############################################################################
 
 
-# LKP 12 #
+# Hierarchical Clustering #
 # Jarak antar data
 data_jarak = dist(WHR_v2[,2:8])
 data_jarak
