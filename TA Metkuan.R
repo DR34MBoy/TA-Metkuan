@@ -96,12 +96,7 @@ mds <- WHR_Fix %>%
 colnames(mds) <- c("Dim.1", "Dim.2")
 
 ## PENTING: Lakukan untuk setiap metode ##
-# Plot MDS
-ggscatter(mds, x = "Dim.1", y = "Dim.2",
-          label = rownames(WHR_Fix),
-          size = 1, 
-          repel = TRUE)
-
+# Plot MDS #
 # K-means clustering
 clust <- kmeans(mds,2)$cluster %>%
   as.factor()
