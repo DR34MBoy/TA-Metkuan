@@ -96,7 +96,7 @@ mds <- WHR_Fix %>%
 colnames(mds) <- c("Dim.1", "Dim.2")
 
 ## PENTING: Lakukan untuk setiap metode ##
-# Plot MDS #
+# Plot MDS 
 # K-means clustering
 clust <- kmeans(mds,2)$cluster %>%
   as.factor()
@@ -140,6 +140,8 @@ hc = hclust(data_jarak,"complete")
 d2 = cophenetic(hc)
 cor.comp = cor(data_jarak,d2)
 cor.comp
+
+## PENTING: Menggunakan metode average karena nilainya lebih besar ##
 
 # Analisis cluster dgn hirarki average 
 hirarki.ave = hclust(data_jarak, method = "ave")
