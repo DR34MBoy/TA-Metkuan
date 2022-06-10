@@ -19,7 +19,7 @@ library(MASS)
 
 
 # Input Data #
-WHR <- fread("D:\\Fakhri\\Kuliah\\Jadwal dan Materi Kuliah\\Tahun Kedua\\Semester 4\\Hal Lain\\Metode Kuantitatif\\TA\\2019.csv") # Ganti file path nya
+WHR <- fread("D:\\Fakhri\\Kuliah\\Jadwal dan Materi Kuliah\\Tahun Kedua\\Semester 4\\Hal Lain\\Metode Kuantitatif\\TA-Metkuan\\2019.csv") # Ganti file path nya
 WHR_v2 <- WHR[,c(2:9)]
 WHR_Fix <- data.frame(WHR_v2, row.names = 1)
 
